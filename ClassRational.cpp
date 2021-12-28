@@ -4,15 +4,17 @@
 
 using namespace std;
 
+// Класс рационального цисла
 class Rational
 {
 public:
 	Rational();
-	Rational(int numerator, int denominator);
+	Rational(int numerator, int denominator); // Параметризированный конструктор. В качестве аргументов принимает числитель и знаменатель.
 
-	int Numerator() const;
-	int Denominator() const;
-
+	int Numerator() const; // Метод возвращает числитель
+	int Denominator() const; // Метод возвращает знаменатель
+	
+	// Перегрузка оператор и их вспомогательные методы
 	Rational operator + (const Rational& y);
 	Rational sumRational(Rational x, Rational y);
 	Rational operator - (const Rational& y);
@@ -29,8 +31,8 @@ public:
 	friend std::ostream& operator << (std::ostream& os, Rational x);
 
 private:
-	int p;
-	int q;
+	int p; // Числитель
+	int q; // Знаменатель 
 
 	//Проверка положительное число или нет
 	//Если дробь p / q отрицательная, то объект Rational(p, q) должен иметь отрицательный числитель и положительный знаменатель.
