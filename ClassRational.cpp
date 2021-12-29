@@ -6,7 +6,7 @@
 class Rational
 {
 public:
-    Rational();
+    Rational(): m_numerator{}, m_denominator{1} {}
     Rational(int numerator, int denominator); // Параметризированный конструктор. В качестве аргументов принимает числитель и знаменатель.
 
     int Numerator() const; // Метод возвращает числитель
@@ -41,13 +41,6 @@ private:
     void equalDenominator(Rational& x, Rational& y);
 
 };
-
-
-Rational::Rational()
-{
-    m_numerator = 0;
-    m_denominator = 1;
-}
 
 Rational::Rational(int numerator, int denominator)
 {
